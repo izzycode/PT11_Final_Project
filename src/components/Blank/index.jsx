@@ -1,5 +1,7 @@
-﻿import React from "react";
+﻿import React from "react"
+import Feed from '../Feed/feed'
+
 
 export default function Blank() {
-  return <main id="mainContent" />;
+  return <Feed />
 }
