@@ -13,3 +13,7 @@
   color: #ffffff;
   background: #000000;
 }
+
+nav {
+  background-image: linear-gradient(yellow, red);
+}

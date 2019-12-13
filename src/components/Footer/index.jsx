@@ -6,10 +6,10 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className="container-fluid">
         <div className="row justify-content-around">
-          <div className="col-8 col-md-5">
-            <h5 className={styles.title}>PT11_Final_Project</h5>
+          <div className="col-8 col-sm-5">
+            <h5 className={styles.title}>Where's the FRUCK?!</h5>
             <p className={styles.description}>
-              This is placeholder text. Your web app description goes here.
+              Find a food truck as soon as your cravings hit!
             </p>
           </div>
           <div className="col-2">
