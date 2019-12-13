@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 import ReactMapGL from 'react-map-gl';
-import {marker} from 'leaflet'
 
 
 
@@ -16,7 +15,6 @@ export default class Map extends Component {
             zoom: 7,
             latitude: 25.7617,
             longitude: 80.1918,
-            marker: []
         }
       };
 
@@ -30,14 +28,13 @@ export default class Map extends Component {
                 width: 900,
                 height: 400,
                 zoom: 7,  
-                marker: [latitude,longitude]
             }})
         })
     }
 
 
     render() {
-
+        
         return (
             <Container>
                 <Card bg="dark" text="light" >
