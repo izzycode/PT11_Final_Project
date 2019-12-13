@@ -1,6 +1,7 @@
 ﻿import React, { Component } from "react";
 import {Route} from "react-router-dom";
-import "./App.css";
+import Truck from './components/Truck'
+
 
 
 
@@ -9,8 +10,8 @@ class App extends Component {
     return (
       <div>
         {/* <Route exact path="/" component={Home}/>
-        <Route path="/register" component={register}/>
-        <Route path="/truck" component={Contact}/> */}
+        <Route path="/register" component={register}/> */}
+    <Route path="/truck" component={Truck}/>
       </div>
       )
     }
