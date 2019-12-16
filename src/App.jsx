@@ -1,5 +1,6 @@
 ﻿import React, { Component } from "react";
 import {Route} from "react-router-dom";
+import Truck from './components/Truck'
 import "./App.css";
 import UserInfo from "./components/Registration/userInfo"
 import NavBar from "./components/NavBar"
@@ -13,7 +14,7 @@ class App extends Component {
         <NavBar/>
         <Route exact path="/" component={Home}/>
         <Route path="/register" component={UserInfo}/>
-        {/* <Route path="/truck" component={Contact}/> */}
+        <Route path="/truck" component={Truck}/>
         <Footer />
       </div>
       )
