@@ -7,7 +7,6 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 
 const app = express();
-const twitter = require('./twitter')()
 
 app.use(logger("dev"));
 app.use(express.json());
