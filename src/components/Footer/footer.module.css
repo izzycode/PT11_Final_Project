@@ -1,5 +1,5 @@
 ﻿.footer {
-  background: linear-gradient(red, yellow);
+  background-color: #b5b5bd;
   padding-top: 2rem;
   padding-bottom: 4rem;
 }
@@ -15,4 +15,9 @@
 .footerlink,
 .footerlink:hover {
   color: #fff;
+}
+
+.where {
+  color: black;
+  font-weight: bolder;
 }
