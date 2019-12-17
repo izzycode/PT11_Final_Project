@@ -15,5 +15,11 @@
 }
 
 nav {
-  background-image: linear-gradient(yellow, red);
+  background-color: #b5b5bd;
+}
+
+nav a {
+  color: rgba(0, 14, 139, 0.897);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: x-large;
 }

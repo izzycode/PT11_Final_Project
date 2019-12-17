@@ -3,13 +3,14 @@ import { red, yellow } from "ansi-colors";
 
 const userInfo = () => {
     return (
+        <div className="container">
         <form>
             <div className="row">
                 <div className="col form-group">
                     <input type="text" className="form-control" placeholder="Truck Name"/>
                 </div>
                 <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Truck Website"/>
+                    <input type="text" className="form-control" placeholder="Truck Description"/>
                 </div>
             </div>
             <div className="row">
@@ -17,12 +18,12 @@ const userInfo = () => {
                     <input type="text" className="form-control" placeholder="Phone Number"/>
                 </div>
                 <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Hours of Operation"/>
+                    <input type="text" className="form-control" placeholder="Website"/>
                 </div>
             </div>
             <div className="row">
                 <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Truck Description"/>
+                    <input type="text" className="form-control" placeholder="Hours of Operation"/>
                 </div>
                 <div className="col form-group">
                     <input type="text" className="form-control" placeholder="Truck Hashtag"/>
@@ -37,114 +38,9 @@ const userInfo = () => {
                     <span className="input-group-text" id="inputGroupFileAddon02">Upload</span>
                 </div>
             </div>
-            <button type="submit" className="btn btn-lg btn-block" style={{backgroundColor: 'yellow'}}>Submit</button>
-
-            {/* <div className="spinner-grow text-primary" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-secondary" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-success" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-danger" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-warning" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-info" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-dark" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-primary" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-secondary" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-success" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-danger" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-warning" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-info" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-dark" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-primary" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-secondary" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-success" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-danger" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-warning" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-info" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-dark" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-primary" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-secondary" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-success" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-danger" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-warning" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-info" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-dark" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-primary" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-secondary" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-success" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-danger" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-warning" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-info" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className="spinner-grow text-dark" role="status">
-                <span className="sr-only">Loading...</span>
-            </div> */}
+            <button type="submit" className="btn btn-lg" style={{backgroundColor: 'yellow'}} class="shadow p-3 mb-5 rounded border-0">Submit</button>
         </form>
+        </div>
     );
 }
 
