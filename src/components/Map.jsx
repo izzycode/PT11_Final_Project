@@ -1,53 +1,37 @@
-import React, { Component } from 'react'
-import Card from 'react-bootstrap/Card'
-import Container from 'react-bootstrap/Container'
-import ReactMapGL from 'react-map-gl';
+import React, { useRef, useEffect} from 'react'
 
 
-
-export default class Map extends Component {
-
-
-    state = {
-        viewport: {
-            width: 900,
-            height: 400,
-            zoom: 7,
-            latitude: 25.7617,
-            longitude: 80.1918,
-        }
-      };
+const loc = {lat: -25.344, lng: 80}
 
 
-    componentDidMount(){
-        navigator.geolocation.getCurrentPosition((maps)=>{
-            // console.log(maps);
-            this.setState({viewport: {
-                latitude: maps.coords.latitude,
-                longitude: maps.coords.longitude,
-                width: 900,
-                height: 400,
-                zoom: 7,  
-            }})
+const Map = props => {
+    const mapRef = useRef()
+
+    
+
+    useEffect(() => {
+        const map = new window.google.maps.Map(mapRef.current,{
+            position: loc,
+            zoom: 6
         })
-    }
+
+        new window.google.maps.Marker({
+            position: loc,
+            map
+        })
+    }, [loc, 6]) 
 
 
-    render() {
+
         
-        return (
-            <Container>
-                <Card bg="dark" text="light" >
-                    <ReactMapGL mapboxApiAccessToken={'pk.eyJ1IjoibmxwYXJyYS1kZXYiLCJhIjoiY2s0MGt1d3NzMDJ0aTNlcXQ2a2w2NmVraCJ9.a6oDqk6CYrUEoZN1DIlYlg'}
-                    {...this.state.viewport}
-                    />
-                    <Card.Body>
-                        <Card.Text>
-                            WTFT!?!?!? Where is my food truck yo!!!
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            </Container>
-        )
-    }
+    return (
+        <div
+            ref={mapRef}
+            className={`map`}
+            style={{height: "600px", width: "1000px", display:"block"}}
+        >
+        </div>
+    )
 }
+ 
+export default Map
