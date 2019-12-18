@@ -57,7 +57,11 @@ import {
                     this.setState({show: 'none'})
                 }} className="btn btn-outline-danger btn-sm">X</button>
                 <h1>{truck.name}</h1>
-                
+                <p>{truck.description} </p>
+                <p>{truck.Hours}</p>
+                <p>{truck.website}</p>
+                 <p>{truck.hashtag}</p>
+        
             </div>
                 
             {/* </CSSTransition> */}
