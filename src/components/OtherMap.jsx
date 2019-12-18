@@ -114,7 +114,6 @@ import {
                                  id={t.id}
                                  opts={{
                                      draggable: true,
-                                     label:'food truck 1',
                                      position: {lat: t.lat, lng: t.lng },
                                  }}
                                  />
