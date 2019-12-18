@@ -1,0 +1,14 @@
+/* .map-modal-enter {
+    transform: translateY(-10rem);
+    opacity: 0;
+}
+
+.modal-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 200ms;
+}
+
+.map-modal {
+    transition: ease-in 1s;
+} */
