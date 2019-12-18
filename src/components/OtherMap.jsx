@@ -4,11 +4,8 @@ import {
     MapBox,
     Marker,
   } from '@googlemap-react/core'
-  
  import React, { Component } from 'react'
- import {CSSTransition} from'react-transition-group'
  import trucks from '../data/trucks'
-
  import './OtherMap.css'
  
  export default class OtherMap extends Component {
@@ -30,16 +27,10 @@ import {
 
      render() {
          let truck = this.state.trucks[this.state.truckIndx]
+         
          return (
              <React.Fragment>
 
-            {/* <CSSTransition
-                in={this.state.show}
-                mountOnEnter
-                unmountOnExit
-                timeout={200}
-                classNames="map-modal"
-            > */}
             <div className="map-modal" style={{
                 width: '60%',
                 height: '70%',
@@ -64,9 +55,7 @@ import {
         
             </div>
                 
-            {/* </CSSTransition> */}
 
-           
                  <GoogleMapProvider>
                     <div className="modal" style={{
                         width: '300px',
@@ -137,9 +126,4 @@ import {
      }
  }
  
-// let trucks=[ {lat,lng,id}],
 
-
-// list with links
-
-// <link to=/truck/id >
