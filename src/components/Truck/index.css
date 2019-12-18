@@ -1,0 +1,31 @@
+.truck-name{
+    background-color: #08321D;
+    color: #D3D7D5;
+    text-align: center;
+    width: 70%;
+    margin-left: 15%;
+    font-family: "Palatino Linotype";
+    font-weight: bold;
+    
+}
+
+.truck-parent{
+    color: #08321D;
+    width: 80%;
+    margin-left: 10%;
+    font-style: "bold";
+    margin-bottom: 4px;
+    border-color: grey;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.truck-attributes{
+    background-color: #D3D7D5;
+    color: #08321D;
+    border: .2px solid black;
+    width: 40%;
+    margin-bottom: 4px;
+    border-color: grey;
+}
