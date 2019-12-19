@@ -48,7 +48,7 @@ export default class Truck extends Component {
                         </div>
                         </div>
                 </div>
-                <TwitterFeed/>
+                {/* <TwitterFeed/> */}
             </div>
         )
     }
