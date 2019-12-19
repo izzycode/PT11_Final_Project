@@ -1,5 +1,5 @@
 var Twitter = require('twitter');
-const fetch = require('node-fetch') 
+const fetch = require('node-fetch')
 require('dotenv').config()
 
 
