@@ -30,5 +30,5 @@ const twitter = () => {
     })
     return response
 }
-
+twitter()
 module.exports = twitter
