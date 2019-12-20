@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Map from '../Map'
+import OtherMap from '../OtherMap'
 import "./index.css"
 
 
@@ -17,7 +17,7 @@ export default class Truck extends Component {
     render() {
         return (
             <div>
-                <Map/>
+                <OtherMap/>
 
                 <div>
                     <h2 className="truck-name">

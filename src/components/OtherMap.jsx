@@ -36,7 +36,6 @@ import {
                 height: '70%',
                 backgroundColor: 'white',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.26)',
-                border:'hotpink solid 10px',
                 zIndex: '100',
                 position: 'fixed',
                 top: '14vh',
@@ -44,6 +43,8 @@ import {
                 display: this.state.show
                 
             }}>
+
+                
                 <button onClick={ e => {
                     this.setState({show: 'none'})
                 }} className="btn btn-outline-danger btn-sm">X</button>
@@ -51,11 +52,10 @@ import {
                 <p>{truck.description} </p>
                 <p>{truck.Hours}</p>
                 <p>{truck.website}</p>
-                 <p>{truck.hashtag}</p>
-        
-            </div>
-                
+                <p>{truck.hashtag}</p>
+                <a href={truck.Website}>{truck.name}</a>
 
+            </div>
                  <GoogleMapProvider>
                     <div className="modal" style={{
                         width: '300px',
@@ -65,6 +65,7 @@ import {
                     }}>
 
                     </div>
+
                    <MapBox
                      apiKey="AIzaSyB1Yrsp1FADOqPpMLzu43cJoPtwRb3LBxw"
                      opts={{
