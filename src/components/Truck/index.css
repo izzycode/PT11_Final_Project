@@ -1,31 +1,44 @@
 .truck-name{
-    background-color: #08321D;
-    color: #D3D7D5;
+    background-color: rgb(5, 122, 64);
+    color: rgb(236, 238, 237);
     text-align: center;
     width: 70%;
     margin-left: 15%;
     font-family: "Palatino Linotype";
     font-weight: bold;
-    
 }
 
 .truck-parent{
-    color: #08321D;
+    color: #090A09;
     width: 80%;
     margin-left: 10%;
-    font-style: "bold";
-    margin-bottom: 4px;
-    border-color: grey;
+    font-weight: bold;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    background-color: #EDF3EC;
+    border: .2px solid black;
+
+}
+.truck-main-image{
+    margin-left: 35%;
 }
 
 .truck-attributes{
-    background-color: #D3D7D5;
-    color: #08321D;
+    background-color: rgb(201, 236, 218);
+    color: #090A09;
     border: .2px solid black;
     width: 40%;
-    margin-bottom: 4px;
-    border-color: grey;
+    border-color: rgb(211, 206, 206);
+    text-align: center;
+}
+
+
+.truck-label{
+    color: #0F2755;
+    width: 10%;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
