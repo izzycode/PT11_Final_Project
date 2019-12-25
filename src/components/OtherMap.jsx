@@ -18,6 +18,7 @@ import {
         truckIndx: 0
     }
     
+    
     componentDidMount (){
         navigator.geolocation.getCurrentPosition( (position) => {
              this.setState({ latitude: position.coords.latitude,

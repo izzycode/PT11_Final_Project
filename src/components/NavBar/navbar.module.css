@@ -16,10 +16,14 @@
 
 nav {
   background-color: #b5b5bd;
+  height: 80px;
 }
 
 nav a {
-  color: rgba(0, 14, 139, 0.897);
+  color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: x-large;
+}
+
+nav a:hover {
+  color:#9fffcb;
 }

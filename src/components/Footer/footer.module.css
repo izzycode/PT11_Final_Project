@@ -1,23 +1,21 @@
-﻿.footer {
-  background-color: #b5b5bd;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
+﻿.footerlink{
+  color: white;
+  font-size: 25px;
+  margin-top: 10px;
 }
 
-.title {
-  color: #fff;
-}
 
-.description {
-  color: #fff;
-}
-
-.footerlink,
 .footerlink:hover {
-  color: #fff;
+  color: #9fffcb;
 }
 
-.where {
-  color: black;
-  font-weight: bolder;
+.where{
+  color: #9fffcb;
+  font-size: 40px;
 }
+
+.find{
+  font-size: 25px;
+}
+
+
