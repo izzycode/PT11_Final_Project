@@ -6,13 +6,15 @@ import UserInfo from "./components/Registration/userInfo"
 import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 import Home from "./components/Home"
+import Landing from './components/Landing/index'
 
 class App extends Component {
   render() {
     return (
       <div>
         <NavBar/>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={Landing}/>
+        <Route path="/Home" component={Home}/>
         <Route path="/register" component={UserInfo}/>
         <Route path="/truck" component={Truck}/>
         <Footer />
