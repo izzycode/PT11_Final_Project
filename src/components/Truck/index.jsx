@@ -5,23 +5,23 @@ import Feed from '../Feed/feed'
 
 
 export default class Truck extends Component {
-    state = {
-        name: "Pizza Zilla Miami",
-        description: "Venezuelan",
-        descriptionTwo: "American",
-        phoneNumber: "786-930-9930",
-        website: <a href={"http://pizzazilla.weebly.com/"}>PizzaZilla</a>,
-        startTime: "6 PM",
-        endTime: "3 AM",
-        hashtag: "PizzaZilla",
-        uploadedPic: <img src="https://pbs.twimg.com/profile_images/558387795119448065/4Ch-1u9a_400x400.png"/>
-    }
+    // state = {
+    //     name: "Pizza Zilla Miami",
+    //     description: "Venezuelan",
+    //     descriptionTwo: "American",
+    //     phoneNumber: "786-930-9930",
+    //     website: <a href={"http://pizzazilla.weebly.com/"}>PizzaZilla</a>,
+    //     startTime: "6 PM",
+    //     endTime: "3 AM",
+    //     hashtag: "PizzaZilla",
+    //     uploadedPic: <img src="https://pbs.twimg.com/profile_images/558387795119448065/4Ch-1u9a_400x400.png"/>
+    // }
     render() {
         return (
-            <div>
+            <div className="m-5">
                 <OtherMap/>
 
-                <div>
+                {/* <div>
                     <h2 className="truck-name">
                         {this.state.name}
                     </h2>
@@ -56,7 +56,7 @@ export default class Truck extends Component {
                             
                         </div>
                 </div>
-                <Feed name={this.state.hashtag}/>
+                <Feed name={this.state.hashtag}/> */}
             </div>
         )
     }

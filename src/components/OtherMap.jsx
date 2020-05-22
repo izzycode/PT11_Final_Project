@@ -32,10 +32,9 @@ import {
          return (
              <React.Fragment>
 
-            <div className="map-modal" style={{
+            <div className="map-modal bg-dark text-light border border-success" style={{
                 width: '60%',
                 height: '70%',
-                backgroundColor: 'white',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.26)',
                 zIndex: '100',
                 position: 'fixed',
@@ -48,12 +47,13 @@ import {
                 
                 <button onClick={ e => {
                     this.setState({show: 'none'})
-                }} className="btn btn-outline-danger btn-sm">X</button>
-                <h1>{truck.name}</h1>
-                <p>{truck.description} </p>
-                <p>{truck.Hours}</p>
-                <p>{truck.website}</p>
-                <p>{truck.hashtag}</p>
+                }} className="btn btn-outline-danger btn-sm float-right ">X</button>
+                <h1>Foodtruck: {truck.name}</h1>
+                <p>Description: {truck.description} </p>
+                <p>Time of Operation: {truck.Hours}</p>
+                <p>Website: {truck.website}</p>
+                <p>Twitter: {truck.hashtag}</p>
+                Check us out on:
                 <a href={truck.Website}>{truck.name}</a>
 
             </div>
@@ -97,6 +97,7 @@ import {
                     {
                         this.state.trucks.map( (t, index) => {
                             return (
+                        
                                 <Marker
                                 key={index}
                                  onClick={ () => {

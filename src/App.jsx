@@ -13,10 +13,12 @@ class App extends Component {
     return (
       <div>
         <NavBar/>
+        <div className="container">
         <Route exact path="/" component={Landing}/>
         <Route path="/Home" component={Home}/>
         <Route path="/register" component={UserInfo}/>
         <Route path="/truck" component={Truck}/>
+        </div>
         <Footer />
       </div>
       )

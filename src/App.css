@@ -15,6 +15,11 @@ footer {
   height: 160px; /* Set the fixed height of the footer here */
 }
 
+.card-img {
+  height: 500px;
+  width: auto;
+}
+
 /* Override Bootstrap Styling */
 
 .btn-primary {

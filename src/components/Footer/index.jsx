@@ -3,7 +3,7 @@ import styles from "./footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-white">
+    <footer className="bg-dark text-white mt-5">
       <div className="container-fluid">
         <div className="row justify-content-around">
           <div className="col-8 col-sm-5 mt-4">

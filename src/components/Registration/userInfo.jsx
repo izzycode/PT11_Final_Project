@@ -20,7 +20,7 @@ const userInfo = () => {
 
 
     return (
-        <div className="container">
+        <div className="container mt-5 mb-5">
         <form>
             <div className="row">
                 <div className="col form-group">
@@ -123,7 +123,7 @@ const userInfo = () => {
                     <span className="input-group-text" id="inputGroupFileAddon02">Upload</span>
                 </div>
             </div>
-            <button type="submit" className="btn btn-lg shadow p-3 mb-5 rounded border-0 btn-block" style={{backgroundColor: 'yellow', fontWeight: 'bold'}} >Submit</button>
+            <button type="submit" className="btn " style={{backgroundColor: 'rgb(159, 255, 203)', fontWeight: 'bold'}} >Submit</button>
         </form>
         </div>
     );
