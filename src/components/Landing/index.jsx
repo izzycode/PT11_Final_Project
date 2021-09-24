@@ -6,7 +6,7 @@ export default class Landing extends Component {
     componentDidMount(){
         setTimeout(()=>{
             this.props.history.push('/Home')
-        },3000)
+        },9000)
     }
 
 
