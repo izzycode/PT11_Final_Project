@@ -11,11 +11,8 @@ export default function NavBar() {
           WTFRUCK!?
         </Link>
         <div className="navbar-nav text-white">
-          <Link className="nav-item nav-link active link" to="/truck">
-            Map |
-          </Link>
-          <Link className="nav-item nav-link active link" to="/">
-            Help, I'm hungry
+          <Link className="nav-item nav-link active link" to="/register">
+            Food Truck Register
           </Link>
         </div>
       </nav>

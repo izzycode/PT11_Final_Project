@@ -19,16 +19,6 @@ export default function Footer() {
                   Home
                 </a>
               </li>
-              <li>
-                <a className="link" href="/truck">
-                  Map
-                </a>
-              </li>
-              <li>
-                <a className="link" href="/register">
-                  Register
-                </a>
-              </li>
             </ul>
           </div>
         </div>

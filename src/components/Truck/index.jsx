@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import OtherMap from '../OtherMap'
 import "./index.css"
-import Feed from '../Feed/feed'
+
 
 
 export default class Truck extends Component {
