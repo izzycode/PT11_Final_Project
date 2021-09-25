@@ -74,8 +74,8 @@ import {
                          zoom: 14,
                         }}
                         style={{
-                            height: '80vh',
-                            width: '80vw',
+                            height: '60vh',
+                            width: '60vw',
                         }}
                         useDrawing
                         useGeometry

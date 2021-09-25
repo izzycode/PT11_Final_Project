@@ -6,7 +6,7 @@ import UserInfo from "./components/Registration/userInfo"
 import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 import Home from "./components/Home"
-import Landing from './components/Landing/index'
+import Landing from './components/Home/Landing'
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
         <NavBar/>
         <div className="container">
         <Route exact path="/" component={Landing}/>
-        <Route path="/Home" component={Home}/>
+        <Route path="/home" component={Home}/>
         <Route path="/register" component={UserInfo}/>
         <Route path="/truck" component={Truck}/>
         </div>

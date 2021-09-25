@@ -1,37 +1,24 @@
-﻿html {
+﻿/* html {
   position: relative;
-  min-height: 100%;
+} */
+
+/* .container{
+  max-width: 540px !important;
+} */
+
+.link{
+  color:white;
 }
 
-body {
-  margin-bottom: 160px !important; /* Height of the footer */
-  padding: 0;
+.link:hover{
+  color: coral;
 }
 
-footer {
+ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 160px; /* Set the fixed height of the footer here */
-}
+  height: 60x; 
+ }
 
-.card-img {
-  height: 500px;
-  width: auto;
-}
-
-/* Override Bootstrap Styling */
-
-.btn-primary {
-  background-color: #025fce !important;
-}
-
-button:focus,
-button:active {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* ::-webkit-input-placeholder {
-  color: pink;
-} */
+ 

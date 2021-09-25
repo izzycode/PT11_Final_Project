@@ -27,7 +27,7 @@ const userInfo = () => {
                     <input type="text" className="form-control" placeholder="Truck Name"/>
                 </div>
                 <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Truck Twitter Handle"/>
+                    <input type="text" className="form-control" placeholder="Instagram Handle"/>
                 </div>
             </div>
             <div className="row">
