@@ -3,15 +3,15 @@ import { red, yellow } from "ansi-colors";
 // import {Dropdown} from "react-bootstrap"
 import Dropdown from "react-bootstrap/Dropdown"
 
-const userInfo = () => {
+const truckRegistration = () => {
 
 
     const clickHandler = (event) => {
         let openingTime = document.getElementById('open-time')
         openingTime.value = event.target.innerText
-        
+
     }
-    
+
     const closeHandler = (event) => {
         let closingTime = document.getElementById('close-time')
         closingTime.value = event.target.innerText
@@ -20,25 +20,25 @@ const userInfo = () => {
 
 
     return (
-        <div className="container mt-5 mb-5">
         <form>
             <div className="row">
                 <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Truck Name"/>
+                    <input type="text" className="form-control" placeholder="Truck Name" name="truck_name"/>
                 </div>
                 <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Instagram Handle"/>
+                    <input type="text" className="form-control" placeholder="Instagram Handle" name="instagram" />
                 </div>
             </div>
             <div className="row">
                 <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Phone Number"/>
+                    <input type="text" className="form-control" placeholder="Phone Number" name="phone"/>
                 </div>
                 <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Website"/>
+                    <input type="text" className="form-control" placeholder="Website" name="site"/>
                 </div>
             </div>
-            <div className="row">
+                <div className="row mb-3">
+                <div className="col-3">
                 <Dropdown style={{paddingLeft: '15px'}}>
                     <Dropdown.Toggle variant="secondary" id="dropdown-basic">
                         Opening Time
@@ -70,10 +70,8 @@ const userInfo = () => {
                         <Dropdown.Item onClick={clickHandler} href="#/action-3">11:00 PM</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-                <div className="col form-group">
-                    <input id="open-time" type="text" className="form-control" placeholder="Opening Time"/>
-                </div>
-
+                    </div>
+                    <div className="col-3">
                 <Dropdown>
                     <Dropdown.Toggle variant="secondary" id="dropdown-basic">
                         Closing Time
@@ -104,29 +102,27 @@ const userInfo = () => {
                         <Dropdown.Item onClick={closeHandler} href="#/action-3">10:00 PM</Dropdown.Item>
                         <Dropdown.Item onClick={closeHandler} href="#/action-3">11:00 PM</Dropdown.Item>
                     </Dropdown.Menu>
-                </Dropdown>
-                <div className="col form-group">
-                    <input id="close-time" type="text" className="form-control" placeholder="Closing Time"/>
+                        </Dropdown>
+                    </div>
+                    <div className="col-6">
+                        <div className="form-group">
+                            <input type="text" className="form-control" placeholder="Cuisine Description"/>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div className="form-group">
-                <input type="text" className="form-control" placeholder="Cuisine Description"/>
-            </div>
 
             <div className="input-group mb-3">
                 <div className="custom-file">
-                    <input type="file" className="custom-file-input" id="inputGroupFile02"/>
+                    <input type="file" className="custom-file-input" id="inputGroupFile02" name="truck_photo"/>
                     <label className="custom-file-label" htmlFor="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Upload picture of food truck</label>
                 </div>
                 <div className="input-group-append">
                     <span className="input-group-text" id="inputGroupFileAddon02">Upload</span>
                 </div>
             </div>
-            <button type="submit" className="btn " style={{backgroundColor: 'rgb(159, 255, 203)', fontWeight: 'bold'}} >Submit</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
-        </div>
     );
 }
 
-export default userInfo;
+export default truckRegistration;

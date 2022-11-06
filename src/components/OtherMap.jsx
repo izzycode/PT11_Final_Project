@@ -6,7 +6,7 @@ import {
   } from '@googlemap-react/core'
  import React, { Component } from 'react'
  import trucks from '../data/trucks'
- import './OtherMap.css'
+
  
  export default class OtherMap extends Component {
 

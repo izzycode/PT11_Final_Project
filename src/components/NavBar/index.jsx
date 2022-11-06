@@ -1,18 +1,18 @@
 ﻿import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./navbar.module.css";
+import logo from "../../asset/wtflogorembg.png"
 
 
 export default function NavBar() {
   return (
     <React.Fragment>
-      <nav className="navbar navbar-expand-md  border-bottom justify-content-between bg-dark text-white">
-        <Link className="navbar-brand font-weight-bold link" to="/">
-          WTFRUCK!?
+      <nav className="navbar navbar-expand-md justify-content-between">
+        <Link className="navbar-brand link" to="/">
+          <img className="logo-img" src={logo} alt="logo" />
         </Link>
-        <div className="navbar-nav text-white">
+        <div className="navbar-nav">
           <Link className="nav-item nav-link active link" to="/register">
-            Food Truck Register
+          <i class="bi bi-truck mr-2"></i>Food Truck Register
           </Link>
         </div>
       </nav>
