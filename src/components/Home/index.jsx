@@ -4,8 +4,8 @@ import Othermap from "./../OtherMap"
 
 const Home = () => {
     return (
-            <div class="row pt-3">
-                <div class="col-4 hungry">
+            <div class="row p-3">
+                <div class="col-4">
                    here will go a list of the trucks
                 </div>
 
