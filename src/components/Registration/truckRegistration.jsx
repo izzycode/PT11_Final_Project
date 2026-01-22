@@ -1,128 +1,162 @@
-import React, { useState } from "react"
-import { red, yellow } from "ansi-colors";
-// import {Dropdown} from "react-bootstrap"
+import React, { useState, useEffect } from "react"
 import Dropdown from "react-bootstrap/Dropdown"
 
-const truckRegistration = () => {
+const TruckRegistration = ({ onSubmit, onCancel }) => {
+  const [form, setForm] = useState({
+    name: "",
+    description: "",
+    website: "",
+    hoursOpen: "",
+    hoursClose: "",
+  })
 
+  const [location, setLocation] = useState(null)
+  const [loadingLocation, setLoadingLocation] = useState(true)
 
-    const clickHandler = (event) => {
-        let openingTime = document.getElementById('open-time')
-        openingTime.value = event.target.innerText
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      pos => {
+        setLocation({
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
+        })
+        setLoadingLocation(false)
+      },
+      () => {
+        setLoadingLocation(false)
+      }
+    )
+  }, [])
 
+  const handleChange = e => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+
+    if (!location) {
+      alert("Location is required. Please allow location access.")
+      return
     }
 
-    const closeHandler = (event) => {
-        let closingTime = document.getElementById('close-time')
-        closingTime.value = event.target.innerText
-
+    const newTruck = {
+      name: form.name,
+      description: form.description,
+      website: form.website,
+      hours: `${form.hoursOpen} - ${form.hoursClose}`,
+      lat: location.lat,
+      lng: location.lng,
+      hashtag: `#${form.name.replace(/\s+/g, "")}`,
     }
 
+    if (onSubmit) onSubmit(newTruck)
+  }
 
-    return (
-        <form>
-            <div className="row">
-                <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Truck Name" name="truck_name"/>
-                </div>
-                <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Instagram Handle" name="instagram" />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Phone Number" name="phone"/>
-                </div>
-                <div className="col form-group">
-                    <input type="text" className="form-control" placeholder="Website" name="site"/>
-                </div>
-            </div>
-                <div className="row mb-3">
-                <div className="col-3">
-                <Dropdown style={{paddingLeft: '15px'}}>
-                    <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                        Opening Time
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-2">12:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-3">1:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-1">2:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-2">3:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-3">4:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-1">5:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-2">6:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-3">7:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-1">8:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-2">9:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-3">10:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-1">11:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-2">12:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-3">1:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-1">2:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-2">3:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-3">4:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-1">5:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-2">6:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-3">7:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-1">8:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-2">9:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-3">10:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={clickHandler} href="#/action-3">11:00 PM</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-                    </div>
-                    <div className="col-3">
-                <Dropdown>
-                    <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                        Closing Time
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-2">12:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-3">1:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-1">2:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-2">3:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-3">4:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-1">5:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-2">6:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-3">7:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-1">8:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-2">9:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-3">10:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-1">11:00 AM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-2">12:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-3">1:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-1">2:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-2">3:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-3">4:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-1">5:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-2">6:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-3">7:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-1">8:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-2">9:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-3">10:00 PM</Dropdown.Item>
-                        <Dropdown.Item onClick={closeHandler} href="#/action-3">11:00 PM</Dropdown.Item>
-                    </Dropdown.Menu>
-                        </Dropdown>
-                    </div>
-                    <div className="col-6">
-                        <div className="form-group">
-                            <input type="text" className="form-control" placeholder="Cuisine Description"/>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <form onSubmit={handleSubmit} style={{ padding: "12px" }}>
+      <h5 className="mb-3">Register your food truck</h5>
 
-            <div className="input-group mb-3">
-                <div className="custom-file">
-                    <input type="file" className="custom-file-input" id="inputGroupFile02" name="truck_photo"/>
-                    <label className="custom-file-label" htmlFor="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Upload picture of food truck</label>
-                </div>
-                <div className="input-group-append">
-                    <span className="input-group-text" id="inputGroupFileAddon02">Upload</span>
-                </div>
-            </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
-    );
+      <input
+        type="text"
+        className="form-control mb-2"
+        placeholder="Truck Name"
+        name="name"
+        value={form.name}
+        onChange={handleChange}
+        required
+      />
+
+      <input
+        type="text"
+        className="form-control mb-2"
+        placeholder="Cuisine Description"
+        name="description"
+        value={form.description}
+        onChange={handleChange}
+        required
+      />
+
+      <input
+        type="text"
+        className="form-control mb-2"
+        placeholder="Website"
+        name="website"
+        value={form.website}
+        onChange={handleChange}
+      />
+
+      <div className="d-flex gap-2 mb-2">
+        <Dropdown className="w-50">
+          <Dropdown.Toggle className="w-100" variant="outline-secondary">
+            {form.hoursOpen || "Opening Time"}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {[
+              "12:00 AM","1:00 AM","2:00 AM","3:00 AM","4:00 AM","5:00 AM",
+              "6:00 AM","7:00 AM","8:00 AM","9:00 AM","10:00 AM","11:00 AM",
+              "12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM",
+              "6:00 PM","7:00 PM","8:00 PM","9:00 PM","10:00 PM","11:00 PM"
+            ].map(time => (
+              <Dropdown.Item
+                key={time}
+                onClick={() => setForm({ ...form, hoursOpen: time })}
+              >
+                {time}
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
+
+        <Dropdown className="w-50">
+          <Dropdown.Toggle className="w-100" variant="outline-secondary">
+            {form.hoursClose || "Closing Time"}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {[
+              "12:00 AM","1:00 AM","2:00 AM","3:00 AM","4:00 AM","5:00 AM",
+              "6:00 AM","7:00 AM","8:00 AM","9:00 AM","10:00 AM","11:00 AM",
+              "12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM",
+              "6:00 PM","7:00 PM","8:00 PM","9:00 PM","10:00 PM","11:00 PM"
+            ].map(time => (
+              <Dropdown.Item
+                key={time}
+                onClick={() => setForm({ ...form, hoursClose: time })}
+              >
+                {time}
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
+
+      <div className="mb-3 text-muted" style={{ fontSize: "12px" }}>
+        {loadingLocation
+          ? "Detecting your location..."
+          : location
+          ? "Location detected"
+          : "Location unavailable"}
+      </div>
+
+      <button
+        type="submit"
+        className="btn btn-primary w-100 mb-2"
+      >
+        Register Truck
+      </button>
+
+      <button
+        type="button"
+        className="btn btn-outline-secondary w-100"
+        onClick={onCancel}
+      >
+        Cancel
+      </button>
+    </form>
+  )
 }
 
-export default truckRegistration;
+export default TruckRegistration
